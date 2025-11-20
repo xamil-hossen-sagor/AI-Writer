@@ -18,16 +18,7 @@ const LiveVoice: React.FC = () => {
   const connect = async () => {
     setStatus('Connecting...');
     try {
-      // Vite exposes env vars under `import.meta.env`. Use VITE_ prefix for client-side use.
-      const apiKey = (import.meta as any)?.env?.VITE_API_KEY || (window as any)?.API_KEY || '';
-      if (!apiKey) {
-        console.error('Missing API key. Set VITE_API_KEY in your environment.');
-        setStatus('Missing API key');
-        setActive(false);
-        return;
-      }
-
-      const ai = new GoogleGenAI({ apiKey });
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       
       // Setup Audio Contexts
       const inputAudioContext = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
