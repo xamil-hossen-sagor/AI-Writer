@@ -1,0 +1,8 @@
+{
+  "name": "TrendFlow AI - SEO & Content Engine",
+  "description": "An intelligent system for discovering trends, generating SEO-optimized articles with reasoning, creating AI images, and producing video summaries.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
